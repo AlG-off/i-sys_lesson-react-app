@@ -1,20 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+function processingRow(item) {
+    return (
+        Object.keys(item).map((col, i) => (
+// eslint-disable-next-line react/no-array-index-key
+            <td key={i} className={`userTable__col-${i}`}>
+                { col === 'avatar'
+                    ? <img className='userTable__user-avatar' src={item[col]} alt='avatar' />
+                    : item[col]
+                }
+            </td>
+        ))
+    );
+}
+
 const TBody = ({ items }) => (
     <tbody>
         {
-        items.map(item => (
-            <tr key={item.id}>
-                <td className='userTable__col-0'>
-                    <img className='userTable__user-avatar' src={item.avatar} alt='avatar' />
-                </td>
-                <td className='userTable__col-1'>
-                    {item.first_name}
-                </td>
-                <td className='userTable__col-2'>
-                    {item.last_name}
-                </td>
+        items.map((item, index) => (
+// eslint-disable-next-line react/no-array-index-key
+            <tr key={index}>
+                {processingRow(item)}
             </tr>
         ))
     }

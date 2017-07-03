@@ -1,0 +1,13 @@
+.resizer {
+    width: 8px;
+    height: 40px;
+    background: transparent;
+    position: absolute;
+    right: -4px;
+    top: 0;
+    cursor: col-resize;
+}
+
+.resizer:hover {
+    background: aqua;
+}

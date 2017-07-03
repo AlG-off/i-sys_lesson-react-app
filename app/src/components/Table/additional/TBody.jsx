@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function processingRow(item) {
+import './TBody.css';
+
+function processingRow(item = []) {
     return (
         Object.keys(item).map((col, i) => (
 // eslint-disable-next-line react/no-array-index-key
@@ -29,11 +31,8 @@ const TBody = ({ items }) => (
 );
 
 TBody.propTypes = {
+// eslint-disable-next-line react/require-default-props
     items: PropTypes.array
-};
-
-TBody.defaultProps = {
-    items: []
 };
 
 export default TBody;

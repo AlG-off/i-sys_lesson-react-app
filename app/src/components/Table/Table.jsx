@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import THead from './additional/THead.jsx';
 import TBody from './additional/TBody.jsx';
 
+import './Table.css';
+
 export default class Table extends PureComponent {
     static propTypes = {
         data: PropTypes.array, // eslint-disable-line react/require-default-props

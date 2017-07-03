@@ -1,0 +1,18 @@
+.container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.userTable {
+    width: 100%;
+    border: 1px solid #d3d3d3;
+    border-collapse: collapse;
+    color: #626466;
+    text-align: left;
+}
+
+.userTable tr:hover{
+    background-color: #E7FCFE;
+    color: #000000;
+    font-weight: 700;
+}

@@ -1,0 +1,15 @@
+.userTable__header {
+    background-image: linear-gradient(#fff, #efefef);
+}
+.userTable__header tr {
+    height: 40px;
+}
+.userTable__col-0,
+.userTable__col-1,
+.userTable__col-2{
+    position: relative;
+    border:1px solid #d3d3d3;
+}
+.userTable__col-0{
+    text-align: center;
+}

@@ -1,4 +1,5 @@
 import axios from 'axios';
+// import mock from '../mock';
 
 import {
     GET_USERS
@@ -19,6 +20,11 @@ export default function getUsers() {
             })
             .catch(err => {
                 console.error(err); // eslint-disable-line no-console
+
+                /* dispatch({
+                    type: GET_USERS,
+                    payload: mock.length = 50
+                });*/
             });
     };
 }

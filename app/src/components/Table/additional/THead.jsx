@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Resizer from './Resizer.jsx';
 
-const THead = ({ columns }) => (
+import './THead.css';
+
+const THead = ({ columns = [] }) => (
     <thead className='userTable__header'>
         <tr>
             {
@@ -9,8 +12,10 @@ const THead = ({ columns }) => (
                     <th
                         className={`userTable__col-${i}`}
                         key={i} // eslint-disable-line react/no-array-index-key
+                        ref={ref => { this[`col${i}`] = ref; }}
                     >
                         { item }
+                        <Resizer target={this[`col${i}`]} />
                     </th>
                 ))
             }
@@ -19,11 +24,8 @@ const THead = ({ columns }) => (
 );
 
 THead.propTypes = {
+// eslint-disable-next-line react/require-default-props
     columns: PropTypes.array
-};
-
-THead.defaultProps = {
-    columns: []
 };
 
 export default THead;

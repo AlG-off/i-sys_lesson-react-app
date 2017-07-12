@@ -1,20 +1,16 @@
 import axios from 'axios';
 
 import {
-    GET_USERS
+    GET_ALL_USERS
 } from '../constants/actionTypes';
 
 export default function getUsers() {
     return dispatch => {
         axios.get('http://dselkirk.getsandbox.com/users')
             .then(res => {
-                const users = res.data;
-
-                users.length = 50;
-
                 dispatch({
-                    type: GET_USERS,
-                    payload: users
+                    type: GET_ALL_USERS,
+                    payload: res.data
                 });
             })
             .catch(err => {
